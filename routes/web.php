@@ -17,11 +17,19 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    $posts = Post::where('user_id', auth()->id())->get();
+    $posts = [];
+    if(auth()->check()) {
+        $posts = auth()->user()->usersCoolPosts()->latest()->get();
+    }
     return view('home', ['posts' => $posts]);
 });
 
+// Main routes
 Route::post("/register", [UserController::class, "register"]);
 Route::post('/logout', [UserController::class, "logout"]);
 Route::post("/login", [UserController::class, "login"]);
+
+// Post related routes
 Route::post("/create-post", [PostController::class, "createPost"]);
+Route::get("/edit-post/{post}", [PostController::class, "showEditScreen"]);
+Route::put("/edit-post/{post}", [PostController::class, "updatePost"]);

@@ -30,9 +30,14 @@
             <div style="background-color: gray; padding: 10px; margin: 10px;">
                 <h3>{{$post['text']}}</h3>
                 {{$post['body']}}
+                <p><a href="/edit-post/{{$post->id}}">Edit post</a></p>
+                <form action="/delete-post/{{$post->id}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button>Delete Post</button>
+                </form>
             </div>
         @endforeach
-    </div>
     @else
      <div style="border: 3px solid black;">
         <h1>Register</h1>
