@@ -45,7 +45,7 @@ This is a simple PHP CRUD application that allows users to perform basic CRUD op
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](https://opensource.org/license/mit/).
 
 ## Author
 
