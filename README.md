@@ -25,12 +25,12 @@ This is a simple PHP CRUD application that allows users to perform basic CRUD op
 - Register and log in with your credentials.
 - Use the provided forms to create, view, edit, or delete posts.
 
-## File Structure
+## General File Structure
 
 - **app:** Contains the core application code.
   - **Http:** Handles HTTP requests and responses.
+    - **Controllers:** Contains controllers for handling requests.
   - **Models:** Contains the application's data models.
-  - **Controllers:** Contains controllers for handling requests.
 - **config:** Configuration files for the application.
 - **database:** Contains database-related files (migrations, seeds).
 - **public:** The web server's document root.
